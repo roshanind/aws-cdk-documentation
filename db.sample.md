@@ -35,11 +35,11 @@ Structure of `Application` table.
 erDiagram
 Application {
     String id PK "Partition key"
+    String tenantId FK "GSI for application"
     String applicationId
     String applicationStatus
     Map documentStatus
     String idempotencyKey
-    String tenantId FK "GSI for application"
     String createdAt
     String updatedAt
 }
@@ -76,19 +76,99 @@ Structure of `Authentication` table
 erDiagram
 Authentication {
     String id PK "Partition key"
+    String tenantId FK "GSI for Authentication"
     Boolean active
     String email
     String roleName
-    String tenantId FK "GSI for Authentication"
+    String username
     String createdAt
     String updatedAt
 }
 ```
+
 Access pattern `Authentication`
 
 | Table Name | Access Pattern |
 | ---------- | -------------- |
 | Authentication |  GetChildUsersByTenantId | 
 
+### **ExternalNotifications Table**
 
+Structure of `ExternalNotifications` table
 
+```mermaid
+erDiagram
+ExternalNotifications {
+    String id PK "Partition key"
+    String tenantId FK "GSI for ExternalNotifications"
+    Boolean addPayee
+    Boolean cardTrx
+    Boolean dailyAccountBalance
+    Boolean disallowedTrx
+    Boolean inComingPayment
+    Boolean outGoingPayment
+    Boolean periodicBankStatement
+}
+```
+
+Access pattern `ExternalNotifications`
+
+| Table Name | Access Pattern |
+| ---------- | -------------- |
+| ExternalNotifications |  NotificationSettingsByTenantId | 
+
+### **Rbac Table**
+
+Structure of `Rbac` table
+
+```mermaid
+erDiagram
+Rbac {
+    String id PK "Partition key"
+    String roleName PK "GSI for Rbac"
+    String tenantId
+    List roleScopes
+    String createdAt
+    String updatedAt
+}
+```
+
+Access pattern `Rbac`
+
+| Table Name | Access Pattern |
+| ---------- | -------------- |
+| Rbac |  listByRoleName | 
+
+### **Tenant Table**
+
+Structure of `Tenant` table
+
+```mermaid
+erDiagram
+Tenant {
+    String id PK "Partition key"
+    String icid FK "GSI for Tenant"
+    String accountId
+    String businessContactName
+    String businessName
+    String cardnoxKey
+    String customerId
+    String ifieldKey
+    String merchantId
+    String ownerId
+    String subscriptionPlanId
+    String tenantType
+    Boolean active
+    Boolean approved
+    Boolean icidActive
+    String createdAt
+    String updatedAt
+}
+
+```
+
+Access pattern `Tenant`
+
+| Table Name | Access Pattern |
+| ---------- | -------------- |
+| Tenant |  GetIfieldKeyByCompanyId | 
