@@ -46,7 +46,7 @@ Application {
 
 ```
 
-### Access pattern `Applicaiton`
+Access pattern `Applicaiton`
 
 | Table Name | Access Pattern |
 | ---------- | -------------- |
@@ -84,8 +84,7 @@ Authentication {
     String updatedAt
 }
 ```
-
-### Access pattern `Authentication`
+Access pattern `Authentication`
 
 | Table Name | Access Pattern |
 | ---------- | -------------- |
