@@ -128,7 +128,8 @@ Access pattern `ExternalNotifications`
 | ExternalNotifications |  NotificationSettingsByTenantId | 
 </details>
 
-### **Rbac Table**
+<details>
+<summary><strong>Rbac Table</strong></summary>
 
 Structure of `Rbac` table
 
@@ -149,8 +150,10 @@ Access pattern `Rbac`
 | Table Name | Access Pattern |
 | ---------- | -------------- |
 | Rbac |  listByRoleName | 
+</details>
 
-### **Tenant Table**
+<details>
+<summary><strong>Tenant Table</strong></summary>
 
 Structure of `Tenant` table
 
@@ -183,3 +186,4 @@ Access pattern `Tenant`
 | Table Name | Access Pattern |
 | ---------- | -------------- |
 | Tenant |  GetIfieldKeyByCompanyId | 
+</details>
