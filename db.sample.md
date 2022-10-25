@@ -25,9 +25,11 @@
 - temp__disable_nitificaitons
 - tenantInfoForUnitEvents
 
-## Database Structure
+## Database Structure and Access Pattern
 
-### **Application Table**
+<details>
+
+<summary><strong>Application Table</strong></summary>
 
 Structure of `Application` table.
 
@@ -52,7 +54,11 @@ Access pattern `Applicaiton`
 | ---------- | -------------- |
 | Application |  GetApplicationByTenantId | 
 
-### **otterz-generalInfo Table**
+</details>
+
+<details>
+
+<summary><strong>otterz-generalInfo Table</strong></summary>
 
 Structure of `otterz-generalInfo` table.
 
@@ -67,8 +73,10 @@ otterz-generalInfo {
 }
 
 ```
+</details>
 
-### **Authentication Table**
+<details>
+<summary><strong>Authentication Table</strong></summary>
 
 Structure of `Authentication` table
 
@@ -91,8 +99,10 @@ Access pattern `Authentication`
 | Table Name | Access Pattern |
 | ---------- | -------------- |
 | Authentication |  GetChildUsersByTenantId | 
+</details>
 
-### **ExternalNotifications Table**
+<details>
+<summary><strong>ExternalNotifications Table</strong></summary>
 
 Structure of `ExternalNotifications` table
 
@@ -116,6 +126,7 @@ Access pattern `ExternalNotifications`
 | Table Name | Access Pattern |
 | ---------- | -------------- |
 | ExternalNotifications |  NotificationSettingsByTenantId | 
+</details>
 
 ### **Rbac Table**
 
